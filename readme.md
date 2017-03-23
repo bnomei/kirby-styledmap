@@ -4,7 +4,7 @@
 
 Kirby CMS Tag and Page Method to print a regular or styled google map. 
 
-**NOTE:** This is not a free plugin. In order to use it on a production server, you need to buy a license. For details on Kirby Opener's license model, scroll down to the License section of this document.
+**NOTE:** This is not a free plugin. In order to use it on a production server, you need to buy a license. For details on Kirby Styledmap's license model, scroll down to the License section of this document.
 
 ## Key Features
 
@@ -54,7 +54,6 @@ Unless you allready use [Kirby Map Field Plugin](https://github.com/AugustMiller
 c::set('plugin.styledmap.apikey', 'YOUR_API_KEY_HERE');
 ```
 
-
 ### Examples Route/Page
 
 This plugin registers a route where you can view some examples and test your API Key.
@@ -101,21 +100,19 @@ or text for a popup window
 
 ### Styled Map
 
-By providing the `style` parameter with the name of a `snippet` you can import custom style defined as JSON. You can [create them yourself](https://developers.google.com/maps/documentation/javascript/styling) or use online editors like [Snazzymaps](https://snazzymaps.com) or [Mapstylr](http://www.mapstylr.com).
+By providing the `style` parameter with the name of a file or `snippet` you can import custom style defined as JSON. You can [create them yourself](https://developers.google.com/maps/documentation/javascript/styling) or use online editors like [Google Mapstyle](http://mapstyle.withgoogle.com), [Snazzymaps](https://snazzymaps.com) or [Mapstylr](http://www.mapstylr.com).
 
 You need to create a new snippet in `/site/snippets/`. In this example I will use the name `sm-example-style` but you can pick whatever name suits you. Then paste the raw JSON inside your snippet or get it from somewhere else using PHP and echo it.
 
 
 ```
 (styledmap: Lualualei Beach Park style: sm-example-style location: 21.437127, -158.186699, 15)
-
 ```
 
 Or you can place a file with `.json`-extension inside the content folder of your `$page` and use the filename as a parameter.
 
 ```
 (styledmap: Lualualei Beach Park style: whatever.json location: 21.437127, -158.186699, 15)
-
 ```
 
 ### Custom Marker Icon
@@ -134,7 +131,7 @@ Create a new `snippet` to return a return an encoded json php array. This exampl
 (styledmap: Lualualei Beach Park markers: sm-example-markers location: 21.437127, -158.186699, 10)
 ```
 
-To learn how to create your own [take a look at the example](https://github.com/bnomei/blob/master/snippets/sm-example-markers.php) provided.
+To learn how to create your own [take a look at the example](https://github.com/bnomei/kirby-styledmap/blob/master/snippets/sm-example-markers.php) provided.
 
 ### Page or Site Method
 
@@ -142,22 +139,22 @@ If you need more control than the Kirby Tag offers the Page or Site Methods regi
 
 ```php
 // short version
-echo $page->styledmap(					// or $site->styledmap(
-		'Lualualei Beach Park', 		// title
-		'21.437127, -158.186699, 15',	// array, url, location or fieldname
-	);
+echo $page->styledmap(				// or $site->styledmap(
+    'Lualualei Beach Park', 		// title
+    '21.437127, -158.186699, 15',	// array, url, location or fieldname
+]);
 
 // all possible parameters
-echo $page->styledmap(					// or $site->styledmap(
-		'Lualualei Beach Park', 		// title
-		'21.437127, -158.186699, 15',	// array, url, location or fieldname
-		[								// optional: data for center marker
-			'info' => 'Uke in Hawaii',
-			'icon' => '/assets/plugins/kirby-styledmap/sm-example-icon.svg',
-		]
-		'sm-example-style', 			// optional: name of style snippet
-		'sm-example-markers', 			// optional: name of markers snippet
-	);
+echo $page->styledmap(				// or $site->styledmap(
+    'Lualualei Beach Park', 		// title
+    '21.437127, -158.186699, 15',	// array, url, location or fieldname
+    [								// optional: data for center marker
+        'info' => 'Uke in Hawaii',
+        'icon' => '/assets/plugins/kirby-styledmap/sm-example-icon.svg',
+    ]
+    'sm-example-style', 			// optional: name of style snippet
+    'sm-example-markers', 			// optional: name of markers snippet
+);
 
 ```
 
@@ -191,7 +188,7 @@ You can set these in your `site/config/config.php`.
 
 ### plugin.styledmap.cssstyle
 - default: css width & height
-- override this if you are too lazy to enter width and height seperatly
+- override this if you are too lazy to enter width and height seperatly or want to add more inline styling
 
 ### plugin.styledmap.mapclass
 - default: 'styledmap-container'
@@ -228,7 +225,6 @@ c::set('plugin.styledmap.jsoptions', [
   ]
 );
 ```
-
 
 ### plugin.styledmap.jsmarker
 - default: 'styledmap-marker'
