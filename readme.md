@@ -6,6 +6,8 @@ Kirby CMS Tag and Page Method to print a regular or styled google map.
 
 **NOTE:** This is not a free plugin. In order to use it on a production server, you need to buy a license. For details on Kirby Styledmap's license model, scroll down to the License section of this document.
 
+If you do not need styling but want absolute control over your markers consider using @Fanningerts [free GMaps Plugin](https://github.com/fanningert/kirbycms-extension-gmaps) instead.
+
 ## Key Features
 
 - add your styling JSON
