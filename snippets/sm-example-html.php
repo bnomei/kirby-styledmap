@@ -69,6 +69,7 @@
 	    		echo site()->styledmap(
 	    			$value['title'],
 	    			$value['location'], 
+	    			[],
 	    			$value['style'], 
 	    			$value['markers']
 	    			);

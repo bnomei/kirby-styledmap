@@ -60,11 +60,11 @@ function styledmapLocation($page, $field, $title = '', $more = []) {
       'lng'   => $lng, 
       'zoom'  => $zoom,
     ];
-    if(gettype($more) != 'array') {
-      var_dump($more);
-      die();
+    if(gettype($more) == 'array') {
+      return array_merge($l, $more);
+    } else {
+      return $l;
     }
-    return array_merge($l, $more);
   }
 
   // else
@@ -86,6 +86,7 @@ foreach ($snippets->files() as $file) {
 /****************************************
   ROUTES
  ***************************************/
+
 if(c::get('plugin.styledmap.examples', true)) {
   $kirby->set('route', 
     array(
@@ -194,6 +195,7 @@ $kirby->set('tag', 'styledmap', array(
 /****************************************
   WIDGET
  ***************************************/
+
 if(str::length(c::get('plugin.styledmap.license', '')) != 40) {
   // Hi there, play fair and buy a license. Thanks!
   $kirby->set('widget', 'styledmap', __DIR__ . '/widgets/styledmap');
