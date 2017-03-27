@@ -23,15 +23,15 @@
 	});
 
 	<?php if($hasInfo && !$hasURL): ?>
-	var infowindow = new google.maps.InfoWindow({
+	var infowindow_<?= $m ?> = new google.maps.InfoWindow({
 		content: '<?= $info ?>',
 		maxWidth: <?= $infoMaxWidth ?>
 		});
 	<?php if($infoOpen): ?>
-	infowindow.open(map, marker_<?= $m ?>);
+	infowindow_<?= $m ?>.open(map, marker_<?= $m ?>);
 	<?php endif; ?>
 	marker_<?= $m ?>.addListener('click', function() {
-		infowindow.open(map, marker_<?= $m ?>);
+		infowindow_<?= $m ?>.open(map, marker_<?= $m ?>);
 	});
 	<?php elseif($hasURL): ?>
 	marker_<?= $m ?>.addListener('click', function() {

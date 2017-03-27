@@ -103,6 +103,6 @@ function initMap() {
 			]);
 	}
 	?>
-	<? endif; ?>
+	<?php endif; ?>
 }
 </script>
