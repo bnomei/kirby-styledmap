@@ -88,7 +88,7 @@ function initMap() {
 	});
 	map.mapTypes.set('custommaptype', customMapType);
 	map.setMapTypeId('custommaptype');
-	<? endif; ?>
+	<?php endif; ?>
 
 	<?php if(count($markers) > 0): ?>
 	// custom map markers
