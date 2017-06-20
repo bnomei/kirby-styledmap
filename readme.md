@@ -143,8 +143,8 @@ If you need more control than the Kirby Tag offers the Page or Site Methods regi
 // short version
 echo $page->styledmap(				// or $site->styledmap(
     'Lualualei Beach Park', 		// title
-    '21.437127, -158.186699, 15',	// array, url, location or fieldname
-]);
+    '21.437127, -158.186699, 15'	// array, url, location or fieldname
+);
 
 // all possible parameters
 echo $page->styledmap(				// or $site->styledmap(
@@ -153,9 +153,9 @@ echo $page->styledmap(				// or $site->styledmap(
     [								// optional: data for center marker
         'info' => 'Uke in Hawaii',
         'icon' => '/assets/plugins/kirby-styledmap/sm-example-icon.svg',
-    ]
+    ],
     'sm-example-style', 			// optional: name of style snippet
-    'sm-example-markers', 			// optional: name of markers snippet
+    'sm-example-markers' 			// optional: name of markers snippet
 );
 
 ```
