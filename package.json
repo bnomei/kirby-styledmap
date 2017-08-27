@@ -1,7 +1,7 @@
 {
   "name": "kirby-styledmap",
   "description": "Kirby CMS Tag and Page Method to render Google Maps.",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "type": "kirby-plugin",
   "license": "Commercial",
   "author": "Bruno Meilick"

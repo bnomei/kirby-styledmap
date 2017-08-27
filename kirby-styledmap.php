@@ -113,31 +113,6 @@ if(c::get('plugin.styledmap.examples', true)) {
 }
 
 /****************************************
-  SITE METHOD
- ***************************************/
-
-$kirby->set('site::method', 'styledmap', 
-  function( 
-    $site, 
-    $title,
-    $location = null,
-    $centerData = [],
-    $snippet_style = null,
-    $snippet_markers = null
-    ) {
-
-    $map = snippet('styledmap', [
-        'page'            => site(),
-        'title'           => $title,
-        'location'        => $location,
-        'centerData'      => $centerData,
-        'snippet_style'   => $snippet_style,
-        'snippet_markers' => $snippet_markers,
-        ], true);
-      return $map;
-});
-
-/****************************************
   PAGE METHOD
  ***************************************/
 
@@ -153,6 +128,31 @@ $kirby->set('page::method', 'styledmap',
 
     $map = snippet('styledmap', [
         'page'            => $page,
+        'title'           => $title,
+        'location'        => $location,
+        'centerData'      => $centerData,
+        'snippet_style'   => $snippet_style,
+        'snippet_markers' => $snippet_markers,
+        ], true);
+      return $map;
+});
+
+/****************************************
+  SITE METHOD
+ ***************************************/
+
+$kirby->set('site::method', 'styledmap', 
+  function( 
+    $site, 
+    $title,
+    $location = null,
+    $centerData = [],
+    $snippet_style = null,
+    $snippet_markers = null
+    ) {
+
+    $map = snippet('styledmap', [
+        'page'            => site(),
         'title'           => $title,
         'location'        => $location,
         'centerData'      => $centerData,
