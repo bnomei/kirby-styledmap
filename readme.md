@@ -2,11 +2,11 @@
 
 ![GitHub release](https://img.shields.io/github/release/bnomei/kirby-styledmap.svg?maxAge=1800) ![License](https://img.shields.io/badge/license-commercial-green.svg) ![Kirby Version](https://img.shields.io/badge/Kirby-2.3%2B-red.svg)
 
-Kirby CMS Tag and Page Method to print a regular or styled google map. 
+Kirby CMS Tag and Page Method to print a regular or styled Google Map. 
 
 **NOTE:** This is not a free plugin. In order to use it on a production server, you need to buy a license. For details on Kirby Styledmap's license model, scroll down to the License section of this document.
 
-If you do not need styling but want absolute control over your markers consider using @Fanningerts [free GMaps Plugin](https://github.com/fanningert/kirbycms-extension-gmaps) instead.
+If you do not need styling but want absolute control over your markers, consider using @Fanningerts [free GMaps Plugin](https://github.com/fanningert/kirbycms-extension-gmaps) instead.
 
 ## Key Features
 
@@ -50,7 +50,7 @@ $ git submodule add https://github.com/bnomei/kirby-styledmap.git site/plugins/k
 
 ### API Key
 
-Unless you allready use [Kirby Map Field Plugin](https://github.com/AugustMiller/kirby-map-field) you need to get a [Google Maps API Key](https://console.developers.google.com/) and add it to your `/site/config/config.php` file. Remember to add *restrictions* (like your website as referrer) when creating the API Key. Otherwise your API Key might be abused.
+Unless you already use [Kirby Map Field Plugin](https://github.com/AugustMiller/kirby-map-field), you need to get a [Google Maps API key](https://console.developers.google.com/) and add it to your `/site/config/config.php` file. Remember to add *restrictions* (like your website as referrer) when creating the API key. Otherwise your API key might be abused.
 
 ```php
 c::set('plugin.styledmap.apikey', 'YOUR_API_KEY_HERE');
@@ -58,7 +58,7 @@ c::set('plugin.styledmap.apikey', 'YOUR_API_KEY_HERE');
 
 ### Examples Route/Page
 
-This plugin registers a route where you can view some examples and test your API Key.
+This plugin registers a route where you can view some examples and test your API key.
 
 ```
 http://YOUR_DOMAIN_HERE/kirby-styledmap-route/examples
@@ -102,16 +102,16 @@ or text for a popup window
 
 ### Styled Map
 
-By providing the `style` parameter with the name of a file or `snippet` you can import custom style defined as JSON. You can [create them yourself](https://developers.google.com/maps/documentation/javascript/styling) or use online editors like [Google Mapstyle](http://mapstyle.withgoogle.com), [Snazzymaps](https://snazzymaps.com) or [Mapstylr](http://www.mapstylr.com).
+By providing the `style` parameter with the name of a file or `snippet`, you can import custom styles defined as JSON. You can [create them yourself](https://developers.google.com/maps/documentation/javascript/styling) or use online editors like [Google Mapstyle](http://mapstyle.withgoogle.com), [Snazzymaps](https://snazzymaps.com) or [Mapstylr](http://www.mapstylr.com).
 
-You need to create a new snippet in `/site/snippets/`. In this example I will use the name `sm-example-style` but you can pick whatever name suits you. Then paste the raw JSON inside your snippet or get it from somewhere else using PHP and echo it.
+You need to create a new snippet in `/site/snippets/`. In the following example I will use the name `sm-example-style`, but you can pick whatever name suits you. Then paste the raw JSON inside your snippet or get it from somewhere else using PHP and echo it.
 
 
 ```
 (styledmap: Lualualei Beach Park style: sm-example-style location: 21.437127, -158.186699, 15)
 ```
 
-Or you can place a file with `.json`-extension inside the content folder of your `$page` and use the filename as a parameter.
+Or you can place a file with `.json` extension inside the content folder of your `$page` and use its filename as `style` parameter.
 
 ```
 (styledmap: Lualualei Beach Park style: whatever.json location: 21.437127, -158.186699, 15)
@@ -127,17 +127,17 @@ c::set('plugin.styledmap.jsmarker.icon', '/assets/plugins/kirby-styledmap/sm-exa
 
 ### Markers
 
-Create a new `snippet` to return a return an encoded json php array. This example uses `sm-example-markers` as filename for the snippet.
+Create a new `snippet` to return an encoded `json` PHP array. This example uses `sm-example-markers` as filename for the snippet.
 
 ```
 (styledmap: Lualualei Beach Park markers: sm-example-markers location: 21.437127, -158.186699, 10)
 ```
 
-To learn how to create your own [take a look at the example](https://github.com/bnomei/kirby-styledmap/blob/master/snippets/sm-example-markers.php) provided.
+To learn how to create your own, [take a look at the example](https://github.com/bnomei/kirby-styledmap/blob/master/snippets/sm-example-markers.php) provided.
 
 ### Page or Site Method
 
-If you need more control than the Kirby Tag offers the Page or Site Methods registered by this plugin should be used.
+If you need more control than the Kirby Tag offers, the Page or Site Methods registered by this plugin should be used.
 
 ```php
 // short version
@@ -206,7 +206,7 @@ You can set these in your `site/config/config.php`.
 
 ### plugin.styledmap.jsoptions
 - default: []
-- disable individual or all google map options using this setting.
+- disable individual or all Google Map options using this setting.
 
 ```php
 // disable zoom
@@ -234,11 +234,11 @@ c::set('plugin.styledmap.jsoptions', [
 
 ### plugin.styledmap.jsmarker.icon
 - default: ''
-- will set default icon for markers using a url of an image (even svg). Supports relative paths since its using the [toolkit url()-helper](https://getkirby.com/docs/toolkit/api#url).
+- will set default icon for markers using a url of an image (even svg). Supports relative paths since it's using the [toolkit url()-helper](https://getkirby.com/docs/toolkit/api#url).
 
 ### plugin.styledmap.jsmarker.infoOpen
 - default: true
-- If an info window is defined then it will be opend by default otherwise the marker has to be clicked first.
+- If an info window is defined, then it will be opened by default, otherwise the marker has to be clicked first.
 
 ### plugin.styledmap.jsmarker.infoMaxWidth
 - default: 200
