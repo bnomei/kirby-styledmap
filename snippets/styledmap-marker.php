@@ -33,10 +33,10 @@
 		maxWidth: <?= $infoMaxWidth ?>
 		});
 	<?php if ($infoOpen): ?>
-	infowindow_<?= $m ?>.open(map, marker_<?= $m ?>);
+	infowindow_<?= $m ?>.open(map<?=$varname?>, marker_<?= $m ?>);
 	<?php endif; ?>
 	marker_<?= $m ?>.addListener('click', function() {
-		infowindow_<?= $m ?>.open(map, marker_<?= $m ?>);
+		infowindow_<?= $m ?>.open(map<?=$varname?>, marker_<?= $m ?>);
 	});
 	<?php elseif ($hasURL): ?>
 	marker_<?= $m ?>.addListener('click', function() {

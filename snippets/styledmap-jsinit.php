@@ -10,7 +10,6 @@
         $varname = '';
     }
 
-
     $useCustomMapType = false;
     $customMapType = '';
     if (isset($style)) {
@@ -76,7 +75,7 @@ var map<?php echo $varname; ?>;
 function initMap<?php echo $varname; ?>() {
 	
 	// map with center marker, zoom, options and maptypeids
-	var map = new google.maps.Map(document.getElementById('<?php echo $id.$varname; ?>'), {
+	var map<?=$varname?> = new google.maps.Map(document.getElementById('<?php echo $id.$varname; ?>'), {
 		
 		center: {lat: <?= $center['lat'] ?>, lng: <?= $center['lng'] ?>},
 		zoom: <?= $center['zoom'] ?>,
@@ -93,15 +92,15 @@ function initMap<?php echo $varname; ?>() {
 		, {
 			name: 'custommaptype'
 	});
-	map.mapTypes.set('custommaptype', customMapType);
-	map.setMapTypeId('custommaptype');
+	map<?=$varname?>.mapTypes.set('custommaptype', customMapType);
+	map<?=$varname?>.setMapTypeId('custommaptype');
 	<?php endif; ?>
 
 	<?php if (count($markers) > 0): ?>
 	// custom map markers
 	<?php for ($m=0; $m<count($markers); $m++) {
     $mrk = $markers[$m];
-    //a::show($mrk);
+
     if (count(a::missing($mrk, ['lat', 'lng'])) > 0) {
         continue;
     }
