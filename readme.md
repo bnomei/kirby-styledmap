@@ -19,6 +19,7 @@ If you do not need styling but want absolute control over your markers, consider
 - marker can open URL on click
 - example code shows how to create custom text labels with svg using a route
 - works out-of-the box with @AugustMiller [Kirby Map Field Plugin](https://github.com/AugustMiller/kirby-map-field).
+- [currently](https://github.com/bnomei/kirby-styledmap/issues/6) only **one** map can be displayed per page
 
 ![Example](https://github.com/bnomei/kirby-styledmap/blob/master/example.png)
 
